@@ -1,55 +1,49 @@
-local map = vim.api.nvim_set_keymap
-
 -- set leader key
-map('n', '<Space>', '<NOP>', {silent=true})
+vim.keymap.set('n', '<Space>', '<NOP>')
 vim.g.mapleader = ' '
 
-map('n', '<Space>s', 'oimport pdb; pdb.set_trace()<ESC>', {silent=true})
 -- load current luafile
-map('n', '<leader>R', ':luafile %<CR>', {})
+vim.keymap.set('n', '<leader>R', ':luafile %<CR>', {})
 
 -- fast tab switch
-map('n', '<leader>1', '1gt', {silent=true})
-map('n', '<leader>2', '2gt', {silent=true})
-map('n', '<leader>3', '3gt', {silent=true})
-map('n', '<leader>4', '4gt', {silent=true})
-map('n', '<leader>5', '5gt', {silent=true})
-map('n', '<leader>6', '6gt', {silent=true})
-map('n', '<leader>7', '7gt', {silent=true})
-map('n', '<leader>8', '8gt', {silent=true})
-map('n', '<leader>9', '9gt', {silent=true})
+vim.keymap.set('n', '<leader>1', '1gt')
+vim.keymap.set('n', '<leader>2', '2gt')
+vim.keymap.set('n', '<leader>3', '3gt')
+vim.keymap.set('n', '<leader>4', '4gt')
+vim.keymap.set('n', '<leader>5', '5gt')
+vim.keymap.set('n', '<leader>6', '6gt')
+vim.keymap.set('n', '<leader>7', '7gt')
+vim.keymap.set('n', '<leader>8', '8gt')
+vim.keymap.set('n', '<leader>9', '9gt')
 
--- fuzzy file finder
 --- current buffer
-map('n', '<C-p>', ':FZF<CR>', {silent=true})
+vim.keymap.set('n', '<C-p>', ':FZF<CR>')
+
 --- new buffer
-map('n', '<leader>t', ':tabnew<CR>:FZF<CR>', {silent=true})
+vim.keymap.set('n', '<leader>t', ':tabnew<CR>:FZF<CR>')
 
 -- completion
 --- navigate completion menu
-map('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', {expr = true})
-map('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', {expr = true})
+vim.keymap.set('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', {expr = true})
+vim.keymap.set('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', {expr = true})
 
 -- File Explorer
-map('n', '<C-n>', ':CHADopen<CR>', {silent=true})
--- map('n', '<C-r>', ':NvimTreeRefresh<CR>', {silent=true})
+vim.keymap.set('n', '<C-n>', ':CHADopen<CR>')
+-- vim.keymap.set('n', '<C-r>', ':NvimTreeRefresh<CR>')
 
 -- Folds
-map('n', '<leader>a', 'zA', {silent=true})
-map('n', '<leader>A', 'zR', {silent=true})
-map('n', '<leader>q', 'za', {silent=true})
-map('n', '<leader>Q', ':set foldlevel=0<CR>', {silent=true})
+vim.keymap.set('n', '<leader>a', 'zA')
+vim.keymap.set('n', '<leader>A', 'zR')
+vim.keymap.set('n', '<leader>q', 'za')
+vim.keymap.set('n', '<leader>Q', ':set foldlevel=0<CR>')
 
 -- Undo Points
-map('i', '.', '.<c-g>u', {})
-map('i', ',', ',<c-g>u', {})
-map('i', ':', ':<c-g>u', {})
-map('i', '[', '[<c-g>u', {})
-map('i', ']', ']<c-g>u', {})
-map('i', '{', '{<c-g>u', {})
-map('i', '}', '}<c-g>u', {})
-map('i', "'", "'<c-g>u", {})
-map('i', '"', '"<c-g>u', {})
-
--- Search and Hop
--- map('n', '/', ':HopPattern<CR>', {})
+vim.keymap.set('i', '.', '.<c-g>u', {})
+vim.keymap.set('i', ',', ',<c-g>u', {})
+vim.keymap.set('i', ':', ':<c-g>u', {})
+vim.keymap.set('i', '[', '[<c-g>u', {})
+vim.keymap.set('i', ']', ']<c-g>u', {})
+vim.keymap.set('i', '{', '{<c-g>u', {})
+vim.keymap.set('i', '}', '}<c-g>u', {})
+vim.keymap.set('i', "'", "'<c-g>u", {})
+vim.keymap.set('i', '"', '"<c-g>u', {})
